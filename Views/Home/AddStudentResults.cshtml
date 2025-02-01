@@ -1,0 +1,22 @@
+﻿@model PT2Revision.Models.ViewModels.StudentResultsVM;
+    <h3>Add Student Results</h3>
+<form asp-controller="Home" asp-action="AddStudentResults" method="post">
+    <p>
+        <label asp-for="studentResults.Student.StudentId"></label>
+        <select asp-for="studentResults.StudentId">
+            @foreach (var sr in Model.students)
+            {
+                <option value="@sr.StudentId">@sr.Name</option>
+            }
+        </select><br />
+        <label asp-for="studentResults.Module.ModuleId"></label>
+        <select asp-for="studentResults.ModuleId">
+            @foreach (var sr in Model.modules)
+            {
+                <option value="@sr.ModuleId">@sr.ModuleName</option>
+            }
+        </select><br />
+        <label asp-for="studentResults.Marks"></label><input type="text"  asp-for="studentResults.Marks" /><br>
+        <input  type="submit"   value="Add Moudle Result"/>
+    </p>
+</form>

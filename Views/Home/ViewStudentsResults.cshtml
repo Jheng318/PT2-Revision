@@ -1,0 +1,22 @@
+﻿@model ICollection<PT2Revision.Models.StudentResults>;
+
+<h3>Students Results</h3>
+<table>
+    <tr>
+        <td>Student</td>
+        <td>Module</td>
+        <td>Marks</td>
+    </tr>
+        @foreach (var result in Model)
+        {
+            {
+
+             <tr>
+                <td>@result.Student.Name</td>
+                <td>@result.Module.ModuleName</td>
+                <td>@result.Marks</td>
+
+            </tr>
+            }
+        }
+</table>
